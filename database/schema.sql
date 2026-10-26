@@ -3,8 +3,8 @@
 
 SET NAMES utf8mb4;
 
-CREATE DATABASE IF NOT EXISTS kiosk CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE kiosk;
+CREATE DATABASE IF NOT EXISTS kioskfinal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE kioskfinal;
 
 -- Red-flag checklist shown first. Any checked item sends the student to the clinic.
 CREATE TABLE danger_signs (
