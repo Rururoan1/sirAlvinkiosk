@@ -414,7 +414,9 @@ try {
         default:          fail('Not found.', 404);
     }
 } catch (Throwable $e) {
-    // Details go to the server's error log, never to the browser.
+    // TEMPORARY DEBUG: remove this block and restore the original generic message once the DB problem is solved.
     error_log($e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine());
-    fail('Something went wrong. Please try again.', 500);
+    $raw = getenv('DB_HOST');
+    $probe = @fsockopen($raw ?: '127.0.0.1', 3306, $en, $es, 3);
+    fail('DEBUG: ' . $e->getMessage() . ' | DB_HOST=' . var_export($raw, true) . ' | tcp=' . ($probe ? 'open' : "closed($en $es)"), 500);
 }
