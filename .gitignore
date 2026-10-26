@@ -1,0 +1,58 @@
+# =====================================================
+# sirAlvinkiosk .gitignore
+# =====================================================
+
+# --- Secrets & credentials (DB passwords, API keys) ---
+
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.secret
+secrets/
+credentials.json
+service-account*.json
+auth.json
+
+
+# --- Database dumps, backups and local data ---
+
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+*.sql.gz
+database/seed*.sql
+database/*.local.sql
+database/backup*/
+
+# --- Logs & uploads ---
+*.log
+logs/
+log/
+public/uploads/
+uploads/
+tmp/
+cache/
+
+# --- Dependencies / build output ---
+vendor/
+node_modules/
+composer.phar
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# --- Editor & OS junk ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+README.md

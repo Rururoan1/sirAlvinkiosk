@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Health Kiosk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Student Health Kiosk</h1>
+</header>
+
+<main>
+  <section data-screen="danger">
+    <h2>Do you have any of these right now?</h2>
+    <p class="hint">Check everything that applies. If you check any, you will be sent to the school clinic.</p>
+    <div id="danger-list"></div>
+    <div class="actions">
+      <span></span>
+      <button class="btn" id="btn-danger-next">None of these &ndash; continue</button>
+    </div>
+  </section>
+
+  <section data-screen="symptoms" hidden>
+    <h2>What are you feeling?</h2>
+    <p class="hint">Choose the one that fits best.</p>
+    <div class="grid" id="symptom-list"></div>
+    <div class="actions">
+      <button class="btn secondary" id="btn-back-symptoms">Back</button>
+    </div>
+  </section>
+
+  <section data-screen="questions" hidden>
+    <h2 id="symptom-title"></h2>
+    <p class="hint">Answer both questions.</p>
+    <div id="question-list"></div>
+    <div class="actions">
+      <button class="btn secondary" id="btn-back-questions">Back</button>
+      <button class="btn" id="btn-submit" disabled>See recommendation</button>
+    </div>
+  </section>
+
+  <section data-screen="result" hidden>
+    <div id="result"></div>
+    <div class="actions">
+      <span></span>
+      <button class="btn" id="btn-restart">Start over</button>
+    </div>
+  </section>
+
+  <p class="error" id="error" role="alert"></p>
+</main>
+
+
+
+<button class="chat-toggle" id="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-panel">
+  Talk to Kiosk Chatbot
+</button>
+
+<section class="chat-panel" id="chat-panel" hidden aria-label="Kiosk chatbot">
+  <div class="chat-head">
+    <strong>Kiosk Chatbot</strong>
+    <button class="btn small secondary" id="chat-close" type="button">Close</button>
+  </div>
+  <div class="chat-log" id="chat-log" aria-live="polite"></div>
+  <div class="chat-form">
+    <input id="chat-input" type="text" maxlength="500" autocomplete="off" placeholder="Type your question...">
+    <button class="btn small" id="chat-send" type="button">Send</button>
+  </div>
+  <p class="chat-note">General guidance only. Not a medical diagnosis.</p>
+</section>
+
+<script src="kiosk.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>

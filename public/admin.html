@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staff Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin">
+
+<header>
+  <h1>Health Trend Dashboard</h1>
+  <div class="who" id="who" hidden>
+    <span id="who-name"></span>
+    <button class="btn secondary small" id="btn-logout">Log out</button>
+  </div>
+</header>
+
+<main>
+  <section id="login" hidden>
+    <div class="login-box">
+      <h2>Staff login</h2>
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input id="username" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <button class="btn" type="submit">Log in</button>
+        <p class="error" id="login-error" role="alert"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="dashboard" hidden>
+    <div class="stats" id="stats"></div>
+
+    <div class="two-col">
+      <div>
+        <h2>Most common symptoms</h2>
+        <div id="symptom-bars"></div>
+      </div>
+      <div>
+        <h2>Last 7 days</h2>
+        <div id="week-bars"></div>
+      </div>
+    </div>
+
+    <h2>Recent activity</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Time</th><th>Device</th><th>Symptom</th><th>Result</th><th>Medicine</th></tr></thead>
+        <tbody id="log-body"></tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager"></div>
+  </section>
+
+  <p><a href="index.html">Back to kiosk</a></p>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
